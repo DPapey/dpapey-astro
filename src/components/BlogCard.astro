@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  post: CollectionEntry<"blog">;
+  }
+
+const { post } = Astro.props;
+
+/*
+Image (First)
+Title (H2)
+Description (Larger <p>)
+Date (lower left smaller <p>)
+tags (lower right smaller <p>)
+*/
+---
+
+<div class="card-container">
+  <div class="inner-container"></div>
+  <Image src={post.}
+</div>
