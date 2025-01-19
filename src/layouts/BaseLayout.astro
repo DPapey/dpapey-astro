@@ -31,14 +31,13 @@ const {
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="DPapey" />
 		<title>DPapey | {title}</title>
+
 		<ClientRouter />
 	</head>
 
-	<body>
-		<div class="background-section">
-			<Nav />
-			<slot />
-			<Footer />
-		</div>
+	<body class="min-h-screen bg-dark-radial bg-purple-300/50 dark:bg-slate-800">
+		<Nav />
+		<slot />
+		<Footer />
 	</body>
 </html>

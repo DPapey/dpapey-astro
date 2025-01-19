@@ -1,0 +1,16 @@
+---
+interface Props {
+  path: string;
+  title: string;
+}
+
+const { path, title } = Astro.props;
+---
+
+<li class="">
+  <a
+    href={path}
+    class="text-neutral-600 dark:text-neutral-300 font-semibold text-xl hover:underline hover:font-bold"
+    >{title}</a
+  >
+</li>

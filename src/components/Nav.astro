@@ -1,20 +1,42 @@
-<div class="nav-wrapper">
-  <div class="navbar">
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/work">Work</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="icon-container">
-    <a href="#" class="icon-link"></a>
-  </div>
-</div>
+---
+import NavLink from "./NavLink.astro";
+import { Icon } from "astro-icon/components";
+import ThemeToggle from "../components/ThemeToggle.astro";
+---
 
-<style>
-  .nav {
-  }
-</style>
+<header
+  class="top-0 left-0 w-full absolute z-50 bg-white/50 dark:bg-gray-900/60 transition-colors duration-300"
+>
+  <div class="flex justify-between items-center px-10 py-4 w-full">
+    <!-- Navigation -->
+    <div
+      class="rounded-full px-8 py-2 border-slate-500 bg-white/20 dark:bg-gray-800/60"
+    >
+      <nav>
+        <ul class="inline-flex space-x-8">
+          <NavLink path="/" title="Home" />
+          <NavLink path="/blog" title="Blog" />
+          <NavLink path="/work" title="Work" />
+          <NavLink path="/about" title="About" />
+        </ul>
+      </nav>
+    </div>
+
+    <!--Right Side-->
+    <div class="flex items-center space-x-6">
+      <a
+        href="https://github.com/dpapey"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon
+          name="github"
+          class="size-8 text-neutral-600 dark:text-neutral-300 hover:opacity-50 transition"
+        />
+      </a>
+      <div>
+        <ThemeToggle />
+      </div>
+    </div>
+  </div>
+</header>

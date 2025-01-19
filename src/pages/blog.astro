@@ -1,26 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import BlogCard from "../components/BlogCard.astro";
+import Main from "../components/Main.astro";
+import H1 from "../components/H1.astro";
 
-const posts = await getCollection("blog");
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
 ---
 
 <BaseLayout
   title="Blog"
   description="The blog for DPapey, focusing on modern web full-stack web development and also photography inspiration."
 >
-  <main>
-    <h1>My Blog</h1>
-    <div>
-      <ul>
-        {
-          posts.map((post: any) => (
-            <li>
-              <a href={`/blog/${post.id}`}>{post.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
+  <Main>
+    <H1 title="My Blog" />
+    <div class="blog-list">
+      {publishedBlogEntries.map((post) => <BlogCard post={post} />)}
     </div>
-  </main>
+  </Main>
 </BaseLayout>

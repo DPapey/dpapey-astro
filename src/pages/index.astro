@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import Main from "../components/Main.astro";
+import H1 from "../components/H1.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <BaseLayout
 	title="Home"
 	description="Welcome to the home of DPapey, a full-stack developer and CISCO Networking Academy Student."
 >
-	<main>
-		<h1>Hello World</h1>
-	</main>
+	<Hero />
+	<Skills />
+	<Main />
 </BaseLayout>

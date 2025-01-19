@@ -1,23 +1,41 @@
 ---
-import { Image } from 'astro:assets';
-
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+
 interface Props {
   post: CollectionEntry<"blog">;
-  }
+}
 
 const { post } = Astro.props;
-
-/*
-Image (First)
-Title (H2)
-Description (Larger <p>)
-Date (lower left smaller <p>)
-tags (lower right smaller <p>)
-*/
 ---
 
-<div class="card-container">
-  <div class="inner-container"></div>
-  <Image src={post.}
+<div
+  class="bg-opacity-60 bg-slate-100 container mx-auto max-w-[600px] rounded-md"
+  id={post.id}
+>
+  <div class="flex flex-column p-6">
+    <!--Cover Image-->
+    <Image
+      src={post.data.cover}
+      width={600}
+      height={600}
+      alt={post.data.coverAlt}
+      class="rounded-xl w-full h-full"
+    />
+  </div>
+  <!--Text Aspect-->
+  <h2>{post.data.title}</h2>
+  <p class="description">{post.data.description}</p>
+  <div class="post-footer">
+    <p class="post-date">{post.data.pubDate}</p>
+    <div class="post-tags">
+      {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+  </div>
 </div>
+
+<!--
+Notes:
+Card Background: opacity-60
+
+-->

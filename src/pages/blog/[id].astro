@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
+import Main from "../../components/Main.astro";
 import { getCollection, render } from "astro:content";
 
 //Getting the paths to the posts (value defined in Astro.props)
@@ -17,6 +17,10 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <h1>{post.data.title}</h1>
-  <Content />
+  <Main>
+    <div class="prose prose-xl">
+      <h1>{post.data.title}</h1>
+      <Content />
+    </div>
+  </Main>
 </BaseLayout>
