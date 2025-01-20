@@ -2,6 +2,10 @@
   "name": "dpapey-astro",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "pnpm": ">=9.15.4"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -16,6 +20,7 @@
     "astro-icon": "^1.1.5",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.17"
   }
 }
