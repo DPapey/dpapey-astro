@@ -9,9 +9,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 >
   <div class="flex justify-between items-center px-10 py-4 w-full">
     <!-- Navigation -->
-    <div
-      class="rounded-full px-8 py-2 border-slate-500 bg-white/20 dark:bg-gray-800/60"
-    >
+    <div class="rounded-full px-8 py-2 border-slate-500">
       <nav>
         <ul class="inline-flex space-x-8">
           <NavLink path="/" title="Home" />
@@ -31,6 +29,12 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       >
         <Icon
           name="github"
+          class="size-8 text-neutral-600 dark:text-neutral-300 hover:opacity-50 transition"
+        />
+      </a>
+      <a href="/gallery">
+        <Icon
+          name="film-strip"
           class="size-8 text-neutral-600 dark:text-neutral-300 hover:opacity-50 transition"
         />
       </a>

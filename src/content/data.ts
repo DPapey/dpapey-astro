@@ -7,14 +7,13 @@ export const skills = [
   {
     title: "Astronaut",
     description:
-      "A fully fledged Astro user, dedicated for blazing fast experiences.",
+      "A dedicated Astro user, designing for blazing fast web experiences.",
     icon: "rocket",
   },
   {
-    title: "Network Engineering",
-    description:
-      "As a student of the CISCO Networking Academy, fulfilling strong network priority to my web-design",
-    icon: "film",
+    title: "React Developer",
+    description: "Developer with a Large interest in React web applications",
+    icon: "film-strip",
   },
 ];
 

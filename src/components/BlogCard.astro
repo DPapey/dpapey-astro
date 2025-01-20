@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -10,32 +11,46 @@ const { post } = Astro.props;
 ---
 
 <div
-  class="bg-opacity-60 bg-slate-100 container mx-auto max-w-[600px] rounded-md"
+  class="inset-shadow-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-opacity-5 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-[1.02] duration-300 p-6 w-full"
   id={post.id}
 >
-  <div class="flex flex-column p-6">
+  <!--Cover Image-->
+  <div class="w-full h-[350px] overflow-hidden rounded-xl">
     <!--Cover Image-->
     <Image
       src={post.data.cover}
       width={600}
       height={600}
       alt={post.data.coverAlt}
-      class="rounded-xl w-full h-full"
+      class="w-full h-full object-cover"
     />
   </div>
-  <!--Text Aspect-->
-  <h2>{post.data.title}</h2>
-  <p class="description">{post.data.description}</p>
-  <div class="post-footer">
-    <p class="post-date">{post.data.pubDate}</p>
-    <div class="post-tags">
-      {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+
+  <!--Text Content-->
+  <div class="p-6">
+    <h2
+      class="font-bold text-2xl text-neutral-100 dark:text-neutral-900 mb-3 transition-colors duration-300"
+    >
+      {post.data.title}
+    </h2>
+    <p class="text-neutral-300 dark:text-neutral-700 text-sm mb-4">
+      {post.data.description}
+    </p>
+    <div class="">
+      <p class="text-sm font-extralight text-black">
+        <FormattedDate date={post.data.pubDate} />
+      </p>
+
+      <!--Footer and Tags-->
+      <div class="flex flex-wrap gap-2">
+        {
+          post.data.tags.map((tag) => (
+            <span class="tag bg-indigo-800 text-white px-3 py-1 rounded-full font-medium text-xs">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>
-
-<!--
-Notes:
-Card Background: opacity-60
-
--->

@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
 import { getCollection, render } from "astro:content";
+import H1 from "../../components/H1.astro";
 
 //Getting the paths to the posts (value defined in Astro.props)
 export async function getStaticPaths() {
@@ -18,8 +19,8 @@ const { Content } = await render(post);
 
 <BaseLayout title={post.data.title} description={post.data.description}>
   <Main>
-    <div class="prose prose-xl">
-      <h1>{post.data.title}</h1>
+    <div class="prose prose-xl dark:text-neutral-200">
+      <H1 title={post.data.title} />
       <Content />
     </div>
   </Main>
