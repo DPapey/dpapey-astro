@@ -2,10 +2,6 @@
   "name": "dpapey-astro",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@9.15.4",
-  "engines": {
-    "pnpm": ">=9.15.4"
-  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
