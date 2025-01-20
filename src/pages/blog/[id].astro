@@ -18,10 +18,12 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <Main>
-    <div class="prose prose-xl dark:text-neutral-200">
-      <H1 title={post.data.title} />
-      <Content />
-    </div>
-  </Main>
+  <article>
+    <Main>
+      <div class="prose prose-xl dark:text-neutral-200">
+        <H1 title={post.data.title} />
+        <Content />
+      </div>
+    </Main>
+  </article>
 </BaseLayout>
