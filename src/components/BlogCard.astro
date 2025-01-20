@@ -11,11 +11,11 @@ const { post } = Astro.props;
 ---
 
 <div
-  class="inset-shadow-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-opacity-5 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-[1.02] duration-300 p-6 w-full"
+  class="bg-gradient-to-r from-orange-500/50 via-purple-500/50 to-pink-500/50 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-[1.02] duration-300 p-6 w-full h-full"
   id={post.id}
 >
   <!--Cover Image-->
-  <div class="w-full h-[350px] overflow-hidden rounded-xl">
+  <div class="w-full h-[350px] sm:h-[350px] overflow-hidden rounded-xl">
     <!--Cover Image-->
     <Image
       src={post.data.cover}
@@ -27,25 +27,25 @@ const { post } = Astro.props;
   </div>
 
   <!--Text Content-->
-  <div class="p-6">
+  <div class="p-4">
     <h2
-      class="font-bold text-2xl text-neutral-100 dark:text-neutral-900 mb-3 transition-colors duration-300"
+      class="font-bold text-3xl dark:text-neutral-100 text-neutral-900 mb-3 transition-colors duration-300"
     >
       {post.data.title}
     </h2>
-    <p class="text-neutral-300 dark:text-neutral-700 text-sm mb-4">
+    <p class="dark:text-white text-neutral-800 font-semibold text-lg mb-4">
       {post.data.description}
     </p>
     <div class="">
-      <p class="text-sm font-extralight text-black">
+      <p class="text-sm font-extralight text-neutral-800 dark:text-white mb-2">
         <FormattedDate date={post.data.pubDate} />
       </p>
 
       <!--Footer and Tags-->
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2 pt-2">
         {
           post.data.tags.map((tag) => (
-            <span class="tag bg-indigo-800 text-white px-3 py-1 rounded-full font-medium text-xs">
+            <span class="tag bg-indigo-800 text-white px-3 py-1 rounded-full font-medium text-xs mb-1">
               {tag}
             </span>
           ))
