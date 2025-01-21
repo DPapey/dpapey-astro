@@ -15,7 +15,9 @@ const { post } = Astro.props;
   id={post.id}
 >
   <!--Cover Image-->
-  <div class="w-full h-[350px] sm:h-[350px] overflow-hidden rounded-xl">
+  <div
+    class="w-full aspect-square min-h-[250px] sm:min-h-[300px] md:min-h-[350px] overflow-hidden rounded-xl"
+  >
     <!--Cover Image-->
     <Image
       src={post.data.cover}

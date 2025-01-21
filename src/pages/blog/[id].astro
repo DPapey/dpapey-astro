@@ -1,8 +1,10 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogLayout from "../../layouts/BlogLayout.astro";
 import Main from "../../components/Main.astro";
 import { getCollection, render } from "astro:content";
 import H1 from "../../components/H1.astro";
+import NavLink from "../../components/NavLink.astro";
+import { Image } from "astro:assets";
 
 //Getting the paths to the posts (value defined in Astro.props)
 export async function getStaticPaths() {
@@ -17,13 +19,25 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
-  <article>
-    <Main>
-      <div class="prose prose-xl dark:text-neutral-200">
+<BlogLayout title={post.data.title} description={post.data.description}>
+  <Main>
+    <div class="text-neutral-200 dark:text-neutral-600 text-2xl mb-16">
+      <ul><NavLink path="/blog" title="Back to all Blogs" /></ul>
+    </div>
+    <article class="mx-auto">
+      <div>
+        <Image
+          src={post.data.cover}
+          width={1200}
+          height={800}
+          class="w-full min-h-48 rounded-lg shadow-xl"
+          alt={post.data.description}
+        />
+      </div>
+      <div class="prose prose-xl dark:prose-invert dark:text-neutral-200 p-4">
         <H1 title={post.data.title} />
         <Content />
       </div>
-    </Main>
-  </article>
-</BaseLayout>
+    </article>
+  </Main>
+</BlogLayout>

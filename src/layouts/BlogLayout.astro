@@ -1,0 +1,54 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+import Main from "../components/Main.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "The home of DPapey",
+  image = "../assets/astro.svg",
+} = Astro.props;
+---
+
+<!--Difference
+- 
+
+
+--><!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <!-- OG Tags -->
+    <meta property="og:title" content={`DPapey | ${title}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DPapey" />
+    <title>DPapey | {title}</title>
+
+    <ClientRouter />
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+
+  <body
+    class="min-h-screen grid grid-rows-[auto,1fr,auto] dark:bg-dark-radial bg-light-radial bg-white dark:bg-slate-800 overflow-x-hidden"
+  >
+    <Nav />
+    <slot />
+    <Footer />
+  </body>
+</html>
