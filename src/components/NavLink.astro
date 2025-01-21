@@ -1,16 +1,21 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a"> & {
   path: string;
   title?: string;
-}
+};
 
-const { path, title } = Astro.props;
+const { path, title, href, class: className, ...props } = Astro.props;
+const pathName = Astro.url.pathname.replace("https://dpapey.dev", "");
+const subpath = pathName.match(/[^\/]+/g);
+const isActive = href === pathName || href === "/" + (subpath?.[0] || "");
 ---
 
-<li class="">
-  <a
-    href={path}
-    class="text-neutral-600 dark:text-neutral-300 font-semibold text-xl hover:underline hover:font-bold"
-    >{title}</a
-  >
-</li>
+<a
+  href={path || href}
+  class:list={[className, { active: isActive }]}
+  {...props}
+  class="text-neutral-600 dark:text-neutral-300 font-semibold text-xl hover:underline hover:font-bold"
+  >{title || <slot />}</a
+>
