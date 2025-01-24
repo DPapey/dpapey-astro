@@ -2,16 +2,55 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import H1 from "../components/H1.astro";
 import Main from "../components/Main.astro";
+import { Image } from "astro:assets";
+import { aboutData } from "../content/data";
 ---
 
 <BaseLayout
   title="About"
-  description="The about page for Dean Pape. Discover who Dean is, and what he brings to the world of Photography and Computer Science"
+  description="The about page for Dean Pape. Discover who Dean is, and what he brings to the world of Photography and Computer Science."
 >
   <Main>
     <H1 title="About Me" />
-    <article class="prose prose-xl prose-invert">
-      <div></div>
+
+    <!-- About Section: Two-column Grid Layout -->
+    <article
+      class="prose prose-xl dark:prose-invert mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 mt-12 max-w-7xl p-6 md:p-12 rounded-xl shadow-xl bg-white dark:bg-gray-900"
+    >
+      <!-- Left Side: Text Content -->
+      <div class="w-full text-left">
+        <h2
+          class="text-4xl font-extrabold text-neutral-900 dark:text-white mb-6"
+        >
+          {aboutData.title}
+        </h2>
+
+        <p class="text-neutral-700 dark:text-neutral-200 leading-relaxed mb-6">
+          {aboutData.description}
+        </p>
+
+        <!-- Key Skills -->
+        {
+          aboutData.extra && (
+            <div class="mt-6 space-y-4">
+              {aboutData.extra.map((item) => (
+                <p class="text-neutral-600 dark:text-neutral-200">{item}</p>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Right Side: Profile Image -->
+      <div class="w-full flex justify-center">
+        <Image
+          src={aboutData.image}
+          width={320}
+          height={320}
+          alt="Dean Portrait"
+          class="rounded-full shadow-lg object-cover w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[320px] lg:h-[320px] border-4 border-neutral-300 dark:border-neutral-700 transition-transform duration-300 transform hover:scale-105"
+        />
+      </div>
     </article>
   </Main>
 </BaseLayout>

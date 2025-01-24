@@ -8,10 +8,9 @@ export default {
         "dark-radial":
           "radial-gradient(circle, rgba(255,0,150,0.4) 0%, rgba(0,0,255,0.3) 100%)", // Darker Purples and Orange
         "light-radial":
-          "radial-gradient(circle, rgba(255, 182, 193, 0.4) 0%, rgba(255, 160, 122, 0.3) 40%, rgba(173, 216, 230, 0.3) 80%, rgba(240, 248, 255, 0.3) 100%)", // Soft pinks, coral, light blue, and white
-        "fancy-layered":
-          "linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('/assets/backgrounds/hero.jpg')",
+          "radial-gradient(circle, rgba(255, 193, 204, 0.4) 0%, rgba(255, 214, 163, 0.3) 35%, rgba(173, 216, 230, 0.2) 70%, rgba(240, 248, 255, 0.1) 100%)",
       },
+      colors: {},
       animation: {
         "gradient-shift": "gradientMove 6s ease infinite alternate",
       },

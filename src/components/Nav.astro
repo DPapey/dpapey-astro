@@ -2,13 +2,14 @@
 import NavLink from "./NavLink.astro";
 import { Icon } from "astro-icon/components";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import Hamburger from "./Hamburger.tsx";
 ---
 
 <header
-  class="top-0 left-0 w-full absolute overflow-hidden z-50 bg-white/50 dark:bg-gray-900/60 transition-colors duration-300"
+  class="top-0 left-0 w-full relative overflow-hidden z-50 bg-white/50 dark:bg-gray-900/60 transition-colors duration-300"
 >
   <div class="flex justify-between items-center px-10 py-4 w-full">
-    <!-- Navigation -->
+    <!-- Desktop Navigation -->
     <div class="rounded-full px-8 py-2 border-slate-500">
       <nav class="hidden sm:flex">
         <ul class="flex space-x-4 sm:space-x-6 lg:space-x-6">
@@ -20,7 +21,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       </nav>
     </div>
 
-    <!--Right Side (Icon and Theme Toggle)-->
+    <!-- Icons and Hamburger -->
     <div class="flex items-center space-x-4 sm:space-x-6">
       <a
         href="https://twitch.tv/dpapey"
@@ -48,9 +49,18 @@ import ThemeToggle from "../components/ThemeToggle.astro";
           class="size-8 text-neutral-600 dark:text-neutral-300 hover:opacity-50 transition"
         />
       </a>
-      <div>
-        <ThemeToggle />
-      </div>
+      <ThemeToggle />
+
+      <!-- React Hamburger Component -->
+      <Hamburger
+        client:load
+        links={[
+          { path: "/", title: "Home" },
+          { path: "/blog", title: "Blog" },
+          { path: "/work", title: "Work" },
+          { path: "/about", title: "About" },
+        ]}
+      />
     </div>
   </div>
 </header>

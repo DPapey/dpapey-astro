@@ -2,17 +2,17 @@
 author: "DPapey"
 title: "First Post"
 description: "Welcome to the blog for DPapey"
-cover: './images/image1.jpg'
-coverAlt: 'Film taken with CineStill 800T film'
+cover: "./images/image1.jpg"
+coverAlt: "Film taken with CineStill 800T film"
 pubDate: "January 18, 2025"
-tags: ['Astro', 'Web']
+tags: ["Astro", "Web"]
 featured: false
 draft: false
 ---
 
 ## 🚀 First Blog Post
 
-Welcome to my first blog post. My blog will primarily discuss Web Development
+Welcome to my first blog post. My blog will primarily discuss the main topics I am interested about, Web Development
 and Photography.
 
 ## 🖥️ Computing

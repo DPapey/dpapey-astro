@@ -13,16 +13,16 @@ interface Props {
 const {
 	title,
 	description = "The home of DPapey",
-	image = "../assets/astro.svg",
+	image = "/rj45.svg",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="antialiased scroll-smooth min-h-screen">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={image} />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 
@@ -34,6 +34,9 @@ const {
 
 		<ClientRouter />
 		<script>
+			if (!localStorage.getItem("theme")) {
+				localStorage.setItem("theme", "dark");
+			}
 			if (localStorage.getItem("theme") === "dark") {
 				document.documentElement.classList.add("dark");
 			}
@@ -41,7 +44,7 @@ const {
 	</head>
 
 	<body
-		class="min-h-screen grid grid-rows-[auto,1fr,auto] dark:bg-dark-radial bg-light-radial bg-white dark:bg-slate-800 overflow-x-hidden"
+		class="min-h-screen grid grid-rows-[auto,1fr,auto] dark:bg-dark-radial bg-light-radial bg-neutral-200 dark:bg-slate-900 overflow-x-hidden"
 	>
 		<Nav />
 		<slot />

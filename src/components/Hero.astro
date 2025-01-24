@@ -1,25 +1,23 @@
 ---
 import H1 from "../components/H1.astro";
+import { heroData } from "../content/data";
 ---
 
 <section
   id="hero"
   class="relative flex items-center h-screen justify-center text-white bg-radial animate-gradient-shift"
 >
-  <div class="text-center max-w-4xl">
-    <H1
-      title="Hello, I'm Dean, a Web Developer from the North East of the UK."
-      class=""
-    />
+  <div class="text-center max-w-4xl transform -translate-y-16">
+    <H1 title={heroData.title} class="" />
     <p
       class="mt-4 text-xl max-w-2xl mx-auto text-neutral-900 dark:text-neutral-100"
     >
-      My site is made entirely possible with 🚀 Astro.
+      {heroData.description}
     </p>
     <a
-      href="/about"
+      href={heroData.ctaLink}
       class="mt-6 inline-block px-6 py-3 text-lg font-semibold rounded-3xl bg-white text-gray-900 hover:bg-gray-300 transition"
-      >Learn More</a
+    >{heroData.ctaText}</a
     >
   </div>
 </section>

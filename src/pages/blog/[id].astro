@@ -1,5 +1,5 @@
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
 import { getCollection, render } from "astro:content";
 import H1 from "../../components/H1.astro";
@@ -19,25 +19,34 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description}>
   <Main>
-    <div class="text-neutral-200 dark:text-neutral-600 text-2xl mb-16">
-      <NavLink path="/blog" title="Back to all Blog posts." />
+    <div class="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
+      <div
+        class="text-neutral-700 dark:text-neutral-200 text-2xl mb-6 -space-y-2"
+      >
+        <NavLink path="/blog" title="Back to all Blog posts." />
+      </div>
+
+      <!-- Blog Post Container -->
+      <article class="w-full text-center">
+        <!-- Image -->
+        <div class="flex justify-center">
+          <Image
+            src={post.data.cover}
+            width={1200}
+            height={800}
+            class="w-full max-w-3xl rounded-lg shadow-xl"
+            alt={post.data.description}
+          />
+        </div>
+
+        <!-- Text Content -->
+        <div class="prose prose-2xl dark:prose-invert p-4 max-w-3xl mx-auto">
+          <H1 title={post.data.title} class="text-6xl" />
+          <Content />
+        </div>
+      </article>
     </div>
-    <article class="mx-auto">
-      <div>
-        <Image
-          src={post.data.cover}
-          width={1200}
-          height={800}
-          class="w-full min-h-48 rounded-lg shadow-xl"
-          alt={post.data.description}
-        />
-      </div>
-      <div class="prose prose-xl dark:prose-invert dark:text-neutral-200 p-4">
-        <H1 title={post.data.title} />
-        <Content />
-      </div>
-    </article>
   </Main>
-</BlogLayout>
+</BaseLayout>
