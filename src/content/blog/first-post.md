@@ -12,8 +12,8 @@ draft: false
 
 ## 🚀 First Blog Post
 
-Welcome to my first blog post. My blog will primarily discuss the main topics I am interested about, Web Development
-and Photography.
+Welcome to my first blog post. My blog will primarily discuss the main topics
+I am interested about, Web Development and Photography.
 
 ## 🖥️ Computing
 

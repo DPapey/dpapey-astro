@@ -1,7 +1,7 @@
 export const heroData = {
   title:
-    "Hi, I'm Dean. A Network Engineer and Web Developer based in the North East of the UK",
-  description: "My site is made entirely possible with 🚀 Astro.",
+    "Hi, I'm Dean. A Network Engineer and Web Developer based in the North East of the UK.",
+  description: "My site is made entirely possible with React and 🚀 Astro.",
   ctaText: "Learn More",
   ctaLink: "/about",
   image: "",
@@ -39,7 +39,7 @@ export const aboutData = {
   title: "Photographer & Developer",
   description:
     "I'm Dean, a passionate MSc Graduate and CISCO Networking Academy student. Currently pursuing my CCNA and eager to work with CISCO Networks. I have also developed a personal hobby in photography.",
-  image: "/assets/profile.jpg",
+  image: "/src/assets/Atom.png",
   extra: [
     "Accredited with CCNA: Introduction to Networks, Microsoft Azure DP-900 & AI-900.",
     "Hands-on experience with CISCO Hardware and Packet Tracer Simulations",

@@ -42,8 +42,10 @@ const { Content } = await render(post);
         </div>
 
         <!-- Text Content -->
-        <div class="prose prose-2xl dark:prose-invert p-4 max-w-3xl mx-auto">
-          <H1 title={post.data.title} class="text-6xl" />
+        <div
+          class="prose prose-xl prose-p:font-semibold prose-p:text-left prose-h2:text-left dark:prose-invert p-4 max-w-3xl"
+        >
+          <H1 title={post.data.title} class="text-5xl" />
           <Content />
         </div>
       </article>

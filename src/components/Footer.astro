@@ -1,3 +1,52 @@
-<footer class="bottom-0 left-0 w-full">
-  <div></div>
+---
+import { Icon } from "astro-icon/components";
+
+const Copyright = new Date().getFullYear();
+---
+
+<footer class="text-neutral-700 dark:text-neutral-200 py-6 bottom-0 mt-16">
+  <div
+    class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center"
+  >
+    <!-- Left: Copyright -->
+    <p class="text-sm font-sans">
+      &copy; {Copyright} DPapey. All rights reserved.
+    </p>
+
+    <!-- Right: Social Links -->
+    <div class="flex space-x-4 mt-4 md:mt-0">
+      <a
+        href="https://www.linkedin.com/in/dean-pape"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-soft-pink transition duration-300"
+      >
+        <Icon
+          name="linkedin"
+          class="size-6 hover:text-gray-600 transition-colors duration-300"
+        />
+      </a>
+
+      <a
+        href="https:www.instagram.com/dpapey"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="size-6 hover:text-gray-600 transition-colors duration-300"
+      >
+        <Icon name="instagram" class="size-6" />
+      </a>
+
+      <a
+        href="https://www.youtube.com/@dpapey"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-soft-lavender transition duration-300"
+      >
+        <Icon
+          name="youtube"
+          class="size-6 hover:text-gray-600 transition-colors duration-300"
+        />
+      </a>
+    </div>
+  </div>
 </footer>

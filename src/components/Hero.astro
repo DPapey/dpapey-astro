@@ -1,5 +1,5 @@
 ---
-import H1 from "../components/H1.astro";
+import MotionH1 from "./MotionH1.tsx";
 import { heroData } from "../content/data";
 ---
 
@@ -8,16 +8,20 @@ import { heroData } from "../content/data";
   class="relative flex items-center h-screen justify-center text-white bg-radial animate-gradient-shift"
 >
   <div class="text-center max-w-4xl transform -translate-y-16">
-    <H1 title={heroData.title} class="" />
+    <!-- This React component will only be hydrated on the client -->
+    <MotionH1 title={heroData.title} client:visible />
+
     <p
       class="mt-4 text-xl max-w-2xl mx-auto text-neutral-900 dark:text-neutral-100"
     >
       {heroData.description}
     </p>
+
     <a
       href={heroData.ctaLink}
       class="mt-6 inline-block px-6 py-3 text-lg font-semibold rounded-3xl bg-white text-gray-900 hover:bg-gray-300 transition"
-    >{heroData.ctaText}</a
     >
+      {heroData.ctaText}
+    </a>
   </div>
 </section>

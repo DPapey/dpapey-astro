@@ -1,0 +1,9 @@
+        <svg
+          class="w-6 h-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 23.5h5V8.5H0v15zm7 0h5V14.5c0-2.2 1.8-4 4-4s4 1.8 4 4v9h5v-9c0-5-4-9-9-9s-9 4-9 9v9z"
+          ></path>
+        </svg>
