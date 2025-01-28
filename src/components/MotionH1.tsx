@@ -20,7 +20,7 @@ const MotionH1 = ({ title }: MotionH1Props) => {
 
   return (
     <motion.h1
-      className="text-6xl md:text-6xl font-bold text-gray-900 leading-tight dark:text-neutral-200 text-center mx-auto w-full"
+      className="text-6xl font-bold text-gray-900 leading-tight dark:text-neutral-200 text-center mx-auto w-full"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
