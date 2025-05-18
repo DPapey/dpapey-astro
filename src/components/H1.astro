@@ -8,7 +8,7 @@ const { title, class: customClass } = Astro.props;
 ---
 
 <h1
-  class={`text-5xl dark:text-neutral-100 font-bold text-black px-12 transition-colors duration-300 ${customClass || ""}`}
+  class={`text-5xl dark:text-neutral-100 text-black font-bold text-black px-12 transition-colors duration-300 ${customClass || ""}`}
 >
   {title}
 </h1>

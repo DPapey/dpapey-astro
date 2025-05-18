@@ -1,0 +1,58 @@
+---
+import { projects } from "../content/data";
+import { Icon } from "astro-icon/components";
+import MotionH2 from "./MotionH2.tsx";
+---
+
+<section
+  id="projects"
+  class="w-full rounded-lg transition-colors duration-300 p-12"
+>
+  <div class="max-w-7xl mx-auto px-6">
+<MotionH2 title="Featured Projects" client:visible/>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-stretch"
+    >
+      {
+        projects.map((project) => (
+<div
+  class="relative group transition-all transform hover:scale-[1.02] hover:shadow-lg duration-300
+  hover:ring-2 hover:ring-blue-700 dark:hover:ring-emerald-500/80
+  rounded-xl overflow-hidden p-5 bg-white shadow-lg dark:bg-black/30 backdrop-blur-lg border border-neutral-200 dark:border-neutral-700
+  w-full h-full flex flex-col justify-between"
+			>
+
+
+  <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
+    {project.title}
+  </h3>
+
+  <p class="text-gray-600 dark:text-gray-300 flex-grow">
+    {project.description}
+  </p>
+
+  <div class="mt-4 flex flex-wrap gap-2">
+    {project.technologies.map((tech) => (
+      <span
+        class="text-sm font-medium bg-indigo-900 text-white dark:bg-emerald-900 dark:text-white px-2 py-1 rounded-full"
+      >
+        {tech}
+      </span>
+    ))}
+  </div>
+
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-6 inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-600 transition"
+    aria-label={`GitHub repository for ${project.title}`}
+  >
+    <Icon name="github" class="size-6 mr-2" />
+    View on GitHub
+  </a>
+</div>        ))
+      }
+    </div>
+  </div>
+</section>

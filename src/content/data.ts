@@ -1,59 +1,69 @@
 export const heroData = {
   title:
-    "Hi, I'm Dean. A Network Engineer and Web Developer based in the North East of the UK.",
+    "Hi, I'm Dean, Building Secure Networks and Scalable Data Solutions.",
   description: "My site is made entirely possible with React and 🚀 Astro.",
   ctaText: "Learn More",
-  ctaLink: "/about",
-  image: "",
+  ctaLink: "/blog",
+  image: "../../src/assets/Atom.png",
 };
 
 export const skills = [
   {
-    title: "Full-Stack",
-    description: "Leveraging knowledge of both front and back-end development.",
+    title: "Full-Stack Development",
+    description:
+      "Expertise in designing and implementing both front-end and back-end systems optimised for performance and scalability.",
     icon: "terminal-window",
   },
   {
-    title: "Astronaut",
+    title: "Network Engineering",
     description:
-      "A dedicated Astro user, designing for blazing fast web experiences.",
+      "Hands-on experience configuring CISCO IOS devices, VLANs, and routing protocols to build secure, reliable networks.",
     icon: "rocket",
   },
   {
-    title: "React Developer",
-    description: "Developer with a Large interest in React web applications",
-    icon: "film-strip",
+    title: "Database Design & Management",
+    description:
+      "Skilled in SQL and MariaDB with a focus on normalisation (3NF), data integrity, and containerised deployments using Docker.",
+    icon: "database",
   },
 ];
 
 export const projects = [
   {
-    title: "WIP",
+    title: "Logistics Fleet Management Database: Eurofleet Logistics",
     description:
-      "An e-commerce experience like no other. Shop fashion at WIP. Utilising Astro for...",
+      "A normalised MariaDB system for managing fleet operations, staff certifications, delivery routes, and dealership logistics. Designed using 3NF for optimal integrity and scalability.",
+    technologies: ["MariaDB", "SQL", "Docker", "phpMyAdmin", "Git"],
+    github: "https://github.com/dpapey/eurofleet-logistics",
   },
-  {},
+  {
+    title: "Containerized SQL Dev Environment",
+    description:
+      "Built local-first environments using Docker to run MariaDB and PostgreSQL servers with phpMyAdmin and pgAdmin UIs. Enables system-independent, secure development and rapid teardown.",
+    technologies: ["Docker", "MariaDB", "PostgreSQL", "pgAdmin", "phpMyAdmin"],
+    github: "https://github.com/dpapey/dpapey-arch-docker",
+  },
+  {
+    title: "Personal Portfolio & Blog (Astro)",
+    description:
+      "A blazing-fast developer portfolio and blog site using Astro and Tailwind. Includes content collections, MDX support, and theme toggling.",
+    technologies: ["Astro", "TailwindCSS", "React", "Motion.dev"],
+    github: "https://github.com/dpapey/dpapey-astro",
+  },
 ];
-
-export const aboutData = {
-  title: "Photographer & Developer",
-  description:
-    "I'm Dean, a passionate MSc Graduate and CISCO Networking Academy student. Currently pursuing my CCNA and eager to work with CISCO Networks. I have also developed a personal hobby in photography.",
-  image: "/src/assets/Atom.png",
-  extra: [
-    "Accredited with CCNA: Introduction to Networks, Microsoft Azure DP-900 & AI-900.",
-    "Hands-on experience with CISCO Hardware and Packet Tracer Simulations",
-    "Let's collaborate on something amazing!",
-  ],
-};
 
 export const techSkills = [
   "TypeScript",
-  "tailwindCSS",
+  "TailwindCSS",
   "Astro",
-  "Next.js",
+  "React",
+  "MariaDB",
+  "PostgreSQL",
+  "Docker",
+  "Git",
+  "CISCO IOS",
   "VLANs",
+  "SQL Normalization (3NF)",
   "Content Collections",
   "Motion.dev",
-  "PostgreSQL",
 ];

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+/* Define the dark variant targeting [data-theme="dark"] */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Light mode base */
+body {
+  @apply text-black;
+}
+
+[data-theme="dark"] body {
+  @apply text-white;
+}
+
+/*
+body::before {
+  background: radial-gradient(circle,
+    var(--radial-light-start) 0%,
+    var(--radial-light-mid) 35%,
+    rgba(173, 216, 230, 0.2) 70%,
+    var(--radial-light-end) 100%);
+}
+
+[data-theme="dark"] body::before {
+  background: radial-gradient(circle,
+    var(--radial-dark-start) 0%,
+    var(--radial-dark-end) 100%);
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle,
+    rgba(255, 193, 204, 0.4) 0%,
+    rgba(255, 214, 163, 0.3) 35%,
+    rgba(173, 216, 230, 0.2) 70%,
+    rgba(240, 248, 255, 0.1) 100%
+  );
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+[data-theme="dark"] body::before {
+  background: radial-gradient(circle, rgba(255, 0, 150, 0.4) 0%, rgba(0, 0, 255, 0.3) 100%);
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+*/

@@ -1,4 +1,5 @@
 ---
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
 import { getCollection, render } from "astro:content";
@@ -21,34 +22,31 @@ const { Content } = await render(post);
 
 <BaseLayout title={post.data.title} description={post.data.description}>
   <Main>
-    <div class="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
-      <div
-        class="text-neutral-700 dark:text-neutral-200 text-2xl mb-6 -space-y-2"
-      >
-        <NavLink path="/blog" title="Back to all Blog posts." />
-      </div>
-
+    <div class="max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
       <!-- Blog Post Container -->
-      <article class="w-full text-center">
+      <article class="w-full">
         <!-- Image -->
         <div class="flex justify-center">
           <Image
             src={post.data.cover}
             width={1200}
             height={800}
-            class="w-full max-w-3xl rounded-lg shadow-xl"
+            class="w-full max-w-4xl rounded-lg shadow-xl"
             alt={post.data.description}
           />
         </div>
 
         <!-- Text Content -->
         <div
-          class="prose prose-xl prose-p:font-semibold prose-p:text-left prose-h2:text-left dark:prose-invert p-4 max-w-3xl"
+          class="prose prose-xl my-4 prose-p:font-semibold prose-p:text-left prose-h2:text-left dark:prose-invert p-4 max-w-5xl mx-auto"
         >
-          <H1 title={post.data.title} class="text-5xl" />
           <Content />
         </div>
-      </article>
+			</article>
+			      <div class="text-2xl mb-6 -space-y-2">
+        <NavLink path="/blog" title="Back to all Blog posts." />
+      </div>
     </div>
   </Main>
 </BaseLayout>
+
