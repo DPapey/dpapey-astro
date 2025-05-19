@@ -34,7 +34,7 @@ export const projects = [
     description:
       "A normalised MariaDB system for managing fleet operations, staff certifications, delivery routes, and dealership logistics. Designed using 3NF for optimal integrity and scalability.",
     technologies: ["MariaDB", "SQL", "Docker", "phpMyAdmin", "Git"],
-    github: "https://github.com/dpapey/eurofleet-logistics",
+    github: "https://github.com/dpapey/logistics-fleet-tracking",
   },
   {
     title: "Containerized SQL Dev Environment",
