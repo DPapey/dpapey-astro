@@ -41,7 +41,7 @@ export const projects = [
     description:
       "Built local-first environments using Docker to run MariaDB and PostgreSQL servers with phpMyAdmin and pgAdmin UIs. Enables system-independent, secure development and rapid teardown.",
     technologies: ["Docker", "MariaDB", "PostgreSQL", "pgAdmin", "phpMyAdmin"],
-    github: "https://github.com/dpapey/dpapey-arch-docker",
+    github: "https://github.com/dpapey/docker-db-environments",
   },
   {
     title: "Personal Portfolio & Blog (Astro)",
@@ -63,7 +63,7 @@ export const techSkills = [
   "Git",
   "CISCO IOS",
   "VLANs",
-  "SQL Normalization (3NF)",
+  "SQL Normalisation (3NF)",
   "Content Collections",
   "Motion.dev",
 ];
