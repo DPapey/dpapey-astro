@@ -32,8 +32,8 @@ export const projects = [
   {
     title: "Logistics Fleet Management Database: Eurofleet Logistics",
     description:
-      "A normalised MariaDB system for managing fleet operations, staff certifications, delivery routes, and dealership logistics. Designed using 3NF for optimal integrity and scalability.",
-    technologies: ["MariaDB", "SQL", "Docker", "phpMyAdmin", "Git"],
+      "A normalised PostgreSQL schema for managing fleet operations, staff certifications, delivery routes, and dealership logistics. Designed using 3NF for optimal integrity and scalability.",
+    technologies: ["PostgreSQL", "SQL", "Docker", "pgAdmin", "Git"],
     github: "https://github.com/dpapey/logistics-fleet-tracking",
   },
   {
@@ -47,7 +47,7 @@ export const projects = [
     title: "Personal Portfolio & Blog (Astro)",
     description:
       "A blazing-fast developer portfolio and blog site using Astro and Tailwind. Includes content collections, MDX support, and theme toggling.",
-    technologies: ["Astro", "TailwindCSS", "React", "Motion.dev"],
+    technologies: ["Astro", "TailwindCSS", "React", "Motion.dev", "TypeScript", "Content Collections"],
     github: "https://github.com/dpapey/dpapey-astro",
   },
 ];
