@@ -5,30 +5,28 @@ import { Icon } from "astro-icon/components";
 
 <section
   id="skills"
-  class="w-full rounded-lg transition-colors duration-300 p-12"
+  class="w-full rounded-lg transition-colors duration-300 px-4 py-12 sm:px-6 md:px-12"
 >
-  <div class="max-w-7xl mx-auto px-6">
-    <h2
-      class="text-4xl font-bold text-center text-gray-900 dark:text-white mb-10"
-    >
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
       My Skills
     </h2>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 p-10 rounded-md shadow-xl bg-opacity-20 bg-blend-saturation"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 p-4 sm:p-6 rounded-md shadow-xl bg-opacity-20 bg-blend-saturation"
     >
       {
         skills.map((skill) => (
-          <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
             <div class="flex justify-center items-center mb-4">
               <Icon
                 name={skill.icon}
-                class="text-4xl dark:text-white transition-colors duration-300"
+                class="text-3xl sm:text-4xl dark:text-white transition-colors duration-300"
               />
             </div>
-            <h3 class="text-xl font-semibold text-center text-gray-900 dark:text-white mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-center text-gray-900 dark:text-white mb-2 break-words">
               {skill.title}
             </h3>
-            <p class="text-center text-gray-600 dark:text-gray-300">
+            <p class="text-center text-sm sm:text-base text-gray-600 dark:text-gray-300 break-words">
               {skill.description}
             </p>
           </div>

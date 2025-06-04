@@ -10,49 +10,49 @@ import Hamburger from "./Hamburger.tsx";
 >
 
 	<div class="flex justify-between items-center px-10 py-4 w-full">
-    <!-- Desktop Navigation -->
-    <div class="rounded-full px-8 py-2 border-slate-800">
-      <nav class="hidden sm:flex">
-        <ul class="flex space-x-4 sm:space-x-6 lg:space-x-6">
-          <li><NavLink path="/" title="Home" /></li>
-          <li><NavLink path="/blog" title="Blog" /></li>
-        </ul>
-      </nav>
-			</div>
+    	<!-- Desktop Navigation -->
+    		<div class="rounded-full px-8 py-2 border-slate-800">
+      			<nav class="hidden sm:flex">
+        			<ul class="flex space-x-4 sm:space-x-6 lg:space-x-6">
+          				<li><NavLink path="/" title="Home" /></li>
+          				<li><NavLink path="/blog" title="Blog" /></li>
+        			</ul>
+      			</nav>
+		</div>
 
 
-    <!-- Icons and Hamburger -->
-    <div class="flex items-center justify-center space-x-4 sm:space-x-6">
-      <a
-        href="https://twitch.tv/dpapey"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon
-          name="twitch"
-          class="size-8 text-neutral-600 dark:text-neutral-300 hover:opacity-50 transition"
-        />
-      </a>
-      <a
-        href="https://github.com/dpapey"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon
-          name="github"
-          class="size-8 text-neutral-600 dark:text-neutral-300 hover:opacity-50 transition"
-        />
-      </a>
-      <ThemeToggle  client:load />
+    	<!-- Icons and Hamburger -->
+	<div class="flex items-center justify-center space-x-4 sm:space-x-6">
+      		<a
+        	href="https://twitch.tv/dpapey"
+        	target="_blank"
+        	rel="noopener noreferrer"
+      		>
+        		<Icon
+          		name="twitch"
+          		class="size-8 text-neutral-900 dark:text-neutral-300 hover:opacity-50 transition"
+        		/>
+      		</a>
+      		<a
+        	href="https://github.com/dpapey"
+        	target="_blank"
+        	rel="noopener noreferrer"
+      		>
+        		<Icon
+          		name="github"
+          		class="size-8 text-neutral-900 dark:text-neutral-300 hover:opacity-50 transition"
+        	/>
+      		</a>
+      		<ThemeToggle  client:load />
 
-      <!-- React Hamburger Component -->
-      <Hamburger
-        client:load
-        links={[
-          { path: "/", title: "Home" },
-          { path: "/blog", title: "Blog" },
-        ]}
-      />
-    </div>
+      		<!-- React Hamburger Component -->
+      		<Hamburger
+        	client:load
+        	links={[
+          		{ path: "/", title: "Home" },
+          		{ path: "/blog", title: "Blog" },
+        		]}
+      		/>
+    	</div>
   </div>
 </header>

@@ -8,12 +8,12 @@ export const heroData = {
 };
 
 export const skills = [
-  {
-    title: "Full-Stack Development",
-    description:
-      "Expertise in designing and implementing both front-end and back-end systems optimised for performance and scalability.",
-    icon: "terminal-window",
-  },
+	{
+  	title: "Back-End Development",
+  	description:
+    		"Specialised in building high-performance, scalable back-end systems using C++ and Go microservices architecture to ensure reliability and efficiency.",
+  	icon: "terminal-window",
+	},
   {
     title: "Network Engineering",
     description:
@@ -29,15 +29,15 @@ export const skills = [
 ];
 
 export const projects = [
+	{
+  	title: "Eurofleet Logistics System",
+  	description:
+    		"A dockerised PostgreSQL-based system with git-controlled environments and C++ CLI integration, designed for managing fleet operations, staff certifications, delivery routes, and dealership logistics with high integrity and scalability.",
+  	technologies: ["PostgreSQL", "Docker", "Git", "C++", "CLI"],
+  	github: "https://github.com/DPapey/eurofleet-logistics-system",
+},
   {
-    title: "Logistics Fleet Management Database: Eurofleet Logistics",
-    description:
-      "A normalised MariaDB system for managing fleet operations, staff certifications, delivery routes, and dealership logistics. Designed using 3NF for optimal integrity and scalability.",
-    technologies: ["MariaDB", "SQL", "Docker", "phpMyAdmin", "Git"],
-    github: "https://github.com/dpapey/eurofleet-logistics",
-  },
-  {
-    title: "Containerized SQL Dev Environment",
+    title: "Containerised SQL Dev Environment",
     description:
       "Built local-first environments using Docker to run MariaDB and PostgreSQL servers with phpMyAdmin and pgAdmin UIs. Enables system-independent, secure development and rapid teardown.",
     technologies: ["Docker", "MariaDB", "PostgreSQL", "pgAdmin", "phpMyAdmin"],
@@ -46,7 +46,7 @@ export const projects = [
   {
     title: "Personal Portfolio & Blog (Astro)",
     description:
-      "A blazing-fast developer portfolio and blog site using Astro and Tailwind. Includes content collections, MDX support, and theme toggling.",
+      "A blazing-fast developer portfolio and blog site leveraging Astro and Tailwind. Includes content collections, MDX support, and theme toggling.",
     technologies: ["Astro", "TailwindCSS", "React", "Motion.dev"],
     github: "https://github.com/dpapey/dpapey-astro",
   },
