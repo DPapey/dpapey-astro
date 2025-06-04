@@ -19,26 +19,39 @@ const MotionH1 = ({ title }: MotionH1Props) => {
   };
 
   return (
-    <motion.h1
-      className="text-6xl font-bold text-gray-900 leading-tight dark:text-neutral-200 text-center mx-auto w-full"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {title.split(" ").map((word, wordIndex) => (
-        <motion.span
-          key={wordIndex}
-          className="inline-flex" // Ensures words stay together
-        >
-          {word.split("").map((char, charIndex) => (
-            <motion.span key={charIndex} variants={letterVariants}>
-              {char}
-            </motion.span>
-          ))}
-          &nbsp; {/* Adds proper spacing between words */}
-        </motion.span>
-      ))}
-    </motion.h1>
+	<motion.h1
+  		className="
+    			text-5xl sm:text-5xl md:text-5xl lg:text-6xl
+    			font-bold
+    			text-gray-900 dark:text-neutral-200
+    			text-center
+    			mx-auto
+   			max-w-full
+   			px-4 sm:px-0
+    			leading-tight
+    			break-words
+    			overflow-wrap-break-word
+  			"
+  		style={{ wordBreak: "break-word" }}
+  		variants={containerVariants}
+  		initial="hidden"
+  		animate="visible"
+	>
+  	{title.split(" ").map((word, wordIndex) => (
+    	<motion.span
+    	  key={wordIndex}
+      	className="inline-block"
+      	style={{ whiteSpace: "normal", display: "inline-block" }}
+    	>
+      	{word.split("").map((char, charIndex) => (
+        	<motion.span key={charIndex} variants={letterVariants} style={{ display: "inline-block" }}>
+          	{char}
+        	</motion.span>
+      	))}
+      	&nbsp;
+    	</motion.span>
+  	))}
+	</motion.h1>
   );
 };
 

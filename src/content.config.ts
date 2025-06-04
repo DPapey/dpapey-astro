@@ -17,7 +17,7 @@ const blog = defineCollection({
     }),
 });
 
-const gallery = defineCollection({
+/*const gallery = defineCollection({
   loader: file("src/content/gallery/gallery.json"),
   schema: ({ image }) =>
     z.object({
@@ -29,6 +29,6 @@ const gallery = defineCollection({
       category: z.string(), //Defines the gallery it belongs
       tags: z.array(z.string()).optional(),
     }),
-});
+});*/
 
-export const collections = { blog, gallery };
+export const collections = { blog };

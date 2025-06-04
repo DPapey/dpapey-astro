@@ -5,29 +5,31 @@ import BlogCard from "../components/BlogCard.astro";
 import Main from "../components/Main.astro";
 import H1 from "../components/H1.astro";
 
-const publishedBlogEntries = await getCollection("blog", ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
-});
+const publishedBlogEntries = (
+	await getCollection("blog", ({ data }) => {
+  		return import.meta.env.PROD ? data.draft !== true : true;
+	})
+).sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
 
 <BaseLayout
-  title="Blog"
-  description="The blog for DPapey, focusing on modern web full-stack web development and also photography inspiration."
+	title="Blog"
+	description="The blog for DPapey, focusing on modern web full-stack web development and also photography inspiration."
 >
-  <Main>
-    <H1 title="My Blog" />
-    <div class="mt-12">
-      <div
-        class="grid grid-cols-1 max-w-7xl mb-4 sm:grid-cols-2 md:grid-cols-2 md:space-x-3 lg:grid-cols-2 gap-12"
-      >
-        {
-          publishedBlogEntries.map((post) => (
-            <a href={`/blog/${post.id}`}>
-              <BlogCard post={post} />
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </Main>
+	<Main>
+		<H1 title="My Blog" />
+		<div class="mt-12">
+			<div
+			class="grid grid-cols-1 max-w-7xl mb-4 sm:grid-cols-2 md:grid-cols-2 md:space-x-3 lg:grid-cols-2 gap-12"
+      			>
+        		{
+          			publishedBlogEntries.map((post) => (
+            			<a href={`/blog/${post.id}`}>
+              				<BlogCard post={post} />
+            			</a>
+          			))
+        		}
+      			</div>
+    		</div>
+  	</Main>
 </BaseLayout>

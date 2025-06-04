@@ -2,7 +2,7 @@
 title: "Creating a Local, System-Independent SQL Environment with Docker"
 description: "How I use Docker to run MariaDB and PostgreSQL locally without tying them to my system."
 author: "DPapey"
-cover: "./images/image1.jpg"
+cover: "./images/dockerised.png"
 coverAlt: "Temp Image"
 pubDate: "2025-05-18"
 tags: ["docker", "sql", "mariadb", "postgresql", "linux", "networking"]
